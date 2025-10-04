@@ -228,8 +228,8 @@ export default function ChatPage() {
                           <MessageList
                               messages={messages}
                               currentUserId={currentUserId}
-                              currentuser={currentUser?.name}
-                              recipientname={recipient?.name}
+                              currentuser={currentUser?.username}
+                              recipientname={recipient?.username}
                               containerRef={containerRef} 
                               bottomRef={bottomRef}
                           />
