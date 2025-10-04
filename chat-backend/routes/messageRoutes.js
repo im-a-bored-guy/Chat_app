@@ -18,7 +18,7 @@ router.post('/send', upload.array('files'), async (req, res) => {
       files: fileData,
     });
 
-    console.log("Received file:", req.files);
+    console.log("Received file");
     await message.save();
     res.status(200).json(message);
   } catch (err) {

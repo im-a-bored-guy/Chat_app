@@ -21,6 +21,17 @@ export const findUserByUsername = async (username) => {
   return data.recepient;
 };
 
+export const loadContactList = async (currentUserId) => {
+    try {
+        // Use the new endpoint defined in the backend
+        const response = await axios.get(`${backendUrl}/contacts/${currentUserId}`); 
+        return response.data; // Returns array of User objects
+    } catch (error) {
+        console.error("API error fetching contact list:", error);
+        throw error;
+    }
+};
+
 export const loadMessages = async (userId1, userId2) => {
   const { data } = await axiosInstance.get(`/api/messages/history/${userId1}/${userId2}`);
   return data;
